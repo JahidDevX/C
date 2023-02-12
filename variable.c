@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-int main() 
+int main()
 {
   int a = 50;
-  int b = 10;
-  int c;
-  c = 500;
+  float b = 10.02f;
+  char c;
+  c = 'C';
 
-  printf("%d\n", c);
-  printf("%d + %d = %d\n", a, b, a+b);
-  printf("%d - %d = %d\n", a, b, a-b);
-  printf("%d * %d = %d\n", a, b, a*b);
-  printf("%d / %d = %d", a, b, a/b);
+  printf("%c\n", c);
+  printf("%d + %f = %f\n", a, b, a + b);
+  printf("%d - %f = %f\n", a, b, a - b);
+  printf("%d * %f = %f\n", a, b, a * b);
+  printf("%d / %f = %f", a, b, a / b);
 
   return 0;
 }
