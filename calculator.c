@@ -1,19 +1,35 @@
 #include <stdio.h>
 
 int main() {
-  float num1, num2, result;
+    double num1, num2;
+    char operator;
 
-  printf("Please enter two numbers (2 5.5): ");
-  scanf("%f %f", &num1, &num2);
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
 
-  result = num1 + num2;
-  printf("%.2f + %.2f = %.2f\n", num1, num2, result);
-  result = num1 - num2;
-  printf("%.2f - %.2f = %.2f\n", num1, num2, result);
-  result = num1 * num2;
-  printf("%.2f * %.2f = %.2f\n", num1, num2, result);
-  result = num1 / num2;
-  printf("%.2f / %.2f = %.2f\n", num1, num2, result);
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator);
 
-  return 0;
+    switch (operator) {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf", num1, num2, num1 + num2);
+            break;
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf", num1, num2, num1 - num2);
+            break;
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf", num1, num2, num1 * num2);
+            break;
+        case '/':
+            if (num2 == 0) {
+                printf("Error: Cannot divide by zero.");
+            } else {
+                printf("%.1lf / %.1lf = %.1lf", num1, num2, num1 / num2);
+            }
+            break;
+        default:
+            printf("Error: Invalid operator.");
+    }
+
+    return 0;
 }
